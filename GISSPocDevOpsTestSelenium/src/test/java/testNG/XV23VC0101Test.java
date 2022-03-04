@@ -30,7 +30,7 @@ public class XV23VC0101Test {
   JavascriptExecutor js;
   @BeforeTest
   public void setUp() {
-	System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");  
+	//System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");  
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -41,7 +41,8 @@ public class XV23VC0101Test {
   }
   @Test
   public void xV23VC0101() {
-    driver.get("http://10.99.104.217:9081/ProsaPortal7/index.jsp");
+    //driver.get("http://10.99.104.217:9081/ProsaPortal7/index.jsp");
+	driver.get("http://" + System.getProperty("host") +":" + System.getProperty("port") +"/ProsaPortal7/index.jsp");
     driver.manage().window().setSize(new Dimension(1038, 684));
     
 	driver.findElement(By.id("ui-accordion-accordion-header-1")).click();
@@ -70,7 +71,7 @@ public class XV23VC0101Test {
   
   @Test
   public void xV23VC0101_2() {
-    driver.get("http://10.99.104.217:9081/ProsaPortal7/index.jsp");
+	  driver.get("http://" + System.getProperty("host") +":" + System.getProperty("port") +"/ProsaPortal7/index.jsp");
     driver.manage().window().setSize(new Dimension(1038, 684));
     
 	driver.findElement(By.id("ui-accordion-accordion-header-1")).click();
