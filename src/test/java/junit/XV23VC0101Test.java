@@ -1,0 +1,91 @@
+package junit;
+
+import org.junit.Test;
+import org.junit.Before;
+import org.junit.After;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+
+import static org.junit.Assert.assertEquals;
+
+import java.time.Duration;
+public class XV23VC0101Test {
+  private WebDriver driver;
+  JavascriptExecutor js;
+  @Before
+  public void setUp() {
+    driver = new ChromeDriver();
+    js = (JavascriptExecutor) driver;
+  }
+  @After
+  public void tearDown() {
+    driver.quit();
+  }
+  @Test
+  public void XV23VC0101_JUNIT() {
+	    //driver.get("http://10.99.104.217:9081/ProsaPortal7/index.jsp");
+		driver.get("http://" + System.getProperty("host") +":" + System.getProperty("port") +"/ProsaPortal7/index.jsp");
+	    driver.manage().window().setSize(new Dimension(1038, 684));
+	    
+		driver.findElement(By.id("ui-accordion-accordion-header-1")).click();
+		Duration duration = Duration.ofSeconds(10);
+	    WebDriverWait wait = new WebDriverWait(driver, duration);
+	    wait.until(ExpectedConditions.elementToBeClickable(By.id("configuracionIntranetDSServicio")));
+	    driver.findElement(By.id("configuracionIntranetDSServicio")).click();
+	    driver.findElement(By.cssSelector("tr:nth-child(1)")).click();
+	    driver.findElement(By.id("codSilcon")).sendKeys("IDUS7143");
+	    driver.findElement(By.id("codSilcon")).sendKeys(Keys.ENTER);
+	    
+	    driver.findElement(By.id("INTRANETDS_SERVICIO")).click();
+	    driver.findElement(By.id("INTRANETDS_SERVICIO")).sendKeys("XV23VC01");
+	    driver.findElement(By.id("submitIntranetDSServicio")).click();
+	    driver.findElement(By.id("sum1")).sendKeys("1");
+	    driver.findElement(By.id("sum2")).click();
+	    driver.findElement(By.id("sum2")).sendKeys("2");
+	    driver.findElement(By.id("multi")).click();
+	    driver.findElement(By.id("multi")).sendKeys("3");
+	    driver.findElement(By.id("SPM.ACC.CALCULAR1")).click();
+	    driver.findElement(By.id("res1")).click();
+	    {
+	      String value = driver.findElement(By.id("res1")).getAttribute("value");
+	      assertEquals(value, "13");
+	    }
+  }
+  
+  @Test
+  public void XV23VC0101_2_JUNIT() {
+	    //driver.get("http://10.99.104.217:9081/ProsaPortal7/index.jsp");
+		driver.get("http://" + System.getProperty("host") +":" + System.getProperty("port") +"/ProsaPortal7/index.jsp");
+	    driver.manage().window().setSize(new Dimension(1038, 684));
+	    
+		driver.findElement(By.id("ui-accordion-accordion-header-1")).click();
+		Duration duration = Duration.ofSeconds(10);
+	    WebDriverWait wait = new WebDriverWait(driver, duration);
+	    wait.until(ExpectedConditions.elementToBeClickable(By.id("configuracionIntranetDSServicio")));
+	    driver.findElement(By.id("configuracionIntranetDSServicio")).click();
+	    driver.findElement(By.cssSelector("tr:nth-child(1)")).click();
+	    driver.findElement(By.id("codSilcon")).sendKeys("IDUS7143");
+	    driver.findElement(By.id("codSilcon")).sendKeys(Keys.ENTER);
+	    
+	    driver.findElement(By.id("INTRANETDS_SERVICIO")).click();
+	    driver.findElement(By.id("INTRANETDS_SERVICIO")).sendKeys("XV23VC01");
+	    driver.findElement(By.id("submitIntranetDSServicio")).click();
+	    driver.findElement(By.id("sum1")).sendKeys("1");
+	    driver.findElement(By.id("sum2")).click();
+	    driver.findElement(By.id("sum2")).sendKeys("2");
+	    driver.findElement(By.id("multi")).click();
+	    driver.findElement(By.id("multi")).sendKeys("3");
+	    driver.findElement(By.id("SPM.ACC.CALCULAR1")).click();
+	    driver.findElement(By.id("res1")).click();
+	    {
+	      String value = driver.findElement(By.id("res1")).getAttribute("value");
+	      assertEquals(value, "13");
+	    }
+  }
+}
