@@ -110,7 +110,7 @@ public class XV23VC0101Test {
 	    driver.findElement(By.id("res1")).click();
 	    {
 	      String value = driver.findElement(By.id("res1")).getAttribute("value");
-	      assertEquals(value, "2");
+	      assertEquals(value, "13");
 	    }
   }
 }
