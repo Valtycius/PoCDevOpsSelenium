@@ -33,7 +33,7 @@ public class XV23VC0101Test {
   }
   @AfterTest
   public void tearDown() {
-    //driver.quit();
+    driver.quit();
   }
   @Test
   public void xV23VC0101() {
