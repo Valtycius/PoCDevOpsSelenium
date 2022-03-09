@@ -70,7 +70,7 @@ public class XV23VC0101Test {
 	    driver.findElement(By.id("res1")).click();
     {
       String value = driver.findElement(By.id("res1")).getAttribute("value");
-      Assert.assertEquals(value, "13", "El resultado de la operación no es correcto ");
+      Assert.assertEquals(value, "10", "El resultado de la operación no es correcto ");
     }
   }
   
@@ -109,7 +109,7 @@ public class XV23VC0101Test {
 	    driver.findElement(By.id("res1")).click();
     {
       String value = driver.findElement(By.id("res1")).getAttribute("value");
-      Assert.assertEquals(value, "1", "El resultado de la operación no es correcto ");
+      Assert.assertEquals(value, "10", "El resultado de la operación no es correcto ");
     }
   }
 }
