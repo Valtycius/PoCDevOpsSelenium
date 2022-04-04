@@ -49,6 +49,7 @@ public class CalculadoraTest {
 			js = (JavascriptExecutor) driver;
 		}catch (Exception e) {
 			System.out.println("Error configurando el webdriver: " + e.getMessage());
+			throw e;
 		}
 	}
 
