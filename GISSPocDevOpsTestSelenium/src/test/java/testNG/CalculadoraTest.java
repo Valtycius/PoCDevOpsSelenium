@@ -102,7 +102,7 @@ public class CalculadoraTest {
 			}
 		}catch (Exception e) {
 			System.out.println("Error al generar el test " + e.getMessage());
-			Assert.assertTrue(false, "Test marcado como fail debido a una excepción durante la ejecución: " + e.getMessage());
+			Assert.assertTrue(false, "Test marcado como fail debido a una excepción durante la ejecución: " + e.toString());
 			throw e;
 		}
 	}
@@ -148,7 +148,7 @@ public class CalculadoraTest {
 			}
 		}catch (Exception e) {
 			System.out.println("Error al generar el test " + e.getMessage());
-			Assert.assertTrue(false, "Test marcado como fail debido a una excepción durante la ejecución: " + e.getMessage());
+			Assert.assertTrue(false, "Test marcado como fail debido a una excepción durante la ejecución: " + e.toString());
 			throw e;
 		}
 	}
