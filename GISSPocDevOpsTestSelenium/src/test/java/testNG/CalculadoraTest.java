@@ -100,9 +100,10 @@ public class CalculadoraTest {
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
 				Assert.assertEquals(value, "10", "El resultado no es correcto ");
 			}
-		}catch (Exception e) {
+		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println("Error al generar el test " + e.getMessage());
-			Assert.assertTrue(false, "Test marcado como fail debido a una excepción durante la ejecución: " + e.getStackTrace());
+			Assert.assertTrue(false, "Test marcado como fail debido a una excepción durante la ejecución: " + e.toString());
 			throw e;
 		}
 	}
@@ -110,7 +111,7 @@ public class CalculadoraTest {
 	@Test
 	public void Suma1y2multi4() {
 		// driver.get("http://10.99.104.217:9081/ProsaPortal7/index.jsp");
-		try{
+		try {
 			driver.get(
 					"http://" + System.getProperty("host") + ":" + System.getProperty("port") + "/ProsaPortal7/index.jsp");
 			driver.manage().window().setSize(new Dimension(1038, 684));
@@ -146,9 +147,10 @@ public class CalculadoraTest {
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
 				Assert.assertEquals(value, "13", "El resultado no es correcto ");
 			}
-		}catch (Exception e) {
+		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println("Error al generar el test " + e.getMessage());
-			Assert.assertTrue(false, "Test marcado como fail debido a una excepción durante la ejecución: " + e.getStackTrace());
+			Assert.assertTrue(false, "Test marcado como fail debido a una excepción durante la ejecución: " + e.toString());
 			throw e;
 		}
 	}
