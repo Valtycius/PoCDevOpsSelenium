@@ -99,7 +99,7 @@ public class CalculadoraTest {
 			driver.findElement(By.id("res1")).click();
 			{
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
-				Assert.assertEquals(value, "10", "El resultado no es correcto ");
+				Assert.assertEquals(value, "9", "El resultado no es correcto ");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -146,7 +146,7 @@ public class CalculadoraTest {
 			driver.findElement(By.id("res1")).click();
 			{
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
-				Assert.assertEquals(value, "13", "El resultado no es correcto ");
+				Assert.assertEquals(value, "12", "El resultado no es correcto ");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
