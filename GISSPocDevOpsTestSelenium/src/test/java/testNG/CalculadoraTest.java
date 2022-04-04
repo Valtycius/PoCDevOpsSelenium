@@ -90,7 +90,7 @@ public class CalculadoraTest {
 	
 			driver.findElement(By.id("INTRANETDS_SERVICIO")).sendKeys("XV23VC01");
 			driver.findElement(By.id("submitIntranetDSServicio")).click();
-			driver.findElement(By.id("sum1")).sendKeys("1");
+			driver.findElement(By.id("sum1")).sendKeys("3");
 			driver.findElement(By.id("sum2")).click();
 			driver.findElement(By.id("sum2")).sendKeys("2");
 			driver.findElement(By.id("multi")).click();
@@ -99,7 +99,7 @@ public class CalculadoraTest {
 			driver.findElement(By.id("res1")).click();
 			{
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
-				Assert.assertEquals(value, "9", "El resultado no es correcto ");
+				Assert.assertEquals(value, "15", "El resultado no es correcto ");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -137,7 +137,7 @@ public class CalculadoraTest {
 	
 			driver.findElement(By.id("INTRANETDS_SERVICIO")).sendKeys("XV23VC01");
 			driver.findElement(By.id("submitIntranetDSServicio")).click();
-			driver.findElement(By.id("sum1")).sendKeys("1");
+			driver.findElement(By.id("sum1")).sendKeys("2");
 			driver.findElement(By.id("sum2")).click();
 			driver.findElement(By.id("sum2")).sendKeys("2");
 			driver.findElement(By.id("multi")).click();
@@ -146,7 +146,7 @@ public class CalculadoraTest {
 			driver.findElement(By.id("res1")).click();
 			{
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
-				Assert.assertEquals(value, "12", "El resultado no es correcto ");
+				Assert.assertEquals(value, "16", "El resultado no es correcto ");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
