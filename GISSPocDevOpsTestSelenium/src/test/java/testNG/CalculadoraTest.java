@@ -76,8 +76,11 @@ public class CalculadoraTest {
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("configuracionIntranetDSServicio")));
 			driver.findElement(By.id("configuracionIntranetDSServicio")).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("codSilcon")));
+
 			driver.findElement(By.id("codSilcon")).sendKeys("IDUS7143");
-			driver.findElement(By.id("codSilcon")).sendKeys(Keys.ENTER);
+			driver.findElement(By.id("configuracionIntranetSubmit")).click();
+			
+			// driver.findElement(By.id("codSilcon")).sendKeys(Keys.ENTER);
 	
 			try {
 				driver.findElement(By.id("INTRANETDS_SERVICIO")).click();
@@ -90,16 +93,16 @@ public class CalculadoraTest {
 	
 			driver.findElement(By.id("INTRANETDS_SERVICIO")).sendKeys("XV23VC01");
 			driver.findElement(By.id("submitIntranetDSServicio")).click();
-			driver.findElement(By.id("sum1")).sendKeys("3");
+			driver.findElement(By.id("sum1")).sendKeys("12");
 			driver.findElement(By.id("sum2")).click();
-			driver.findElement(By.id("sum2")).sendKeys("2");
+			driver.findElement(By.id("sum2")).sendKeys("11");
 			driver.findElement(By.id("multi")).click();
-			driver.findElement(By.id("multi")).sendKeys("3");
+			driver.findElement(By.id("multi")).sendKeys("2");
 			driver.findElement(By.id("SPM.ACC.CALCULAR1")).click();
 			driver.findElement(By.id("res1")).click();
 			{
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
-				Assert.assertEquals(value, "15", "El resultado no es correcto ");
+				Assert.assertEquals(value, "46", "El resultado no es correcto ");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -123,8 +126,11 @@ public class CalculadoraTest {
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("configuracionIntranetDSServicio")));
 			driver.findElement(By.id("configuracionIntranetDSServicio")).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("codSilcon")));
+
 			driver.findElement(By.id("codSilcon")).sendKeys("IDUS7143");
-			driver.findElement(By.id("codSilcon")).sendKeys(Keys.ENTER);
+			driver.findElement(By.id("configuracionIntranetSubmit")).click();
+			
+			// driver.findElement(By.id("codSilcon")).sendKeys(Keys.ENTER);
 	
 			try {
 				driver.findElement(By.id("INTRANETDS_SERVICIO")).click();
@@ -137,16 +143,16 @@ public class CalculadoraTest {
 	
 			driver.findElement(By.id("INTRANETDS_SERVICIO")).sendKeys("XV23VC01");
 			driver.findElement(By.id("submitIntranetDSServicio")).click();
-			driver.findElement(By.id("sum1")).sendKeys("2");
+			driver.findElement(By.id("sum1")).sendKeys("15");
 			driver.findElement(By.id("sum2")).click();
-			driver.findElement(By.id("sum2")).sendKeys("2");
+			driver.findElement(By.id("sum2")).sendKeys("10");
 			driver.findElement(By.id("multi")).click();
 			driver.findElement(By.id("multi")).sendKeys("4");
 			driver.findElement(By.id("SPM.ACC.CALCULAR1")).click();
 			driver.findElement(By.id("res1")).click();
 			{
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
-				Assert.assertEquals(value, "16", "El resultado no es correcto ");
+				Assert.assertEquals(value, "100", "El resultado no es correcto ");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
