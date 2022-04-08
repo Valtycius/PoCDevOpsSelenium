@@ -101,8 +101,9 @@ public class CalculadoraTest {
 			driver.findElement(By.id("SPM.ACC.CALCULAR1")).click();
 			driver.findElement(By.id("res1")).click();
 			{
+				final String valorEsperado = "46";
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
-				Assert.assertEquals(value, "46", "El resultado no es correcto ");
+				Assert.assertEquals(value, valorEsperado, "El resultado no es correcto, se esperaba" + valorEsperado + " y se ha obtenido " + value);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -151,8 +152,9 @@ public class CalculadoraTest {
 			driver.findElement(By.id("SPM.ACC.CALCULAR1")).click();
 			driver.findElement(By.id("res1")).click();
 			{
+				final String valorEsperado = "100";
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
-				Assert.assertEquals(value, "100", "El resultado no es correcto ");
+				Assert.assertEquals(value, valorEsperado, "El resultado no es correcto, se esperaba" + valorEsperado + " y se ha obtenido " + value);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
