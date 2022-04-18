@@ -73,13 +73,18 @@ public class CalculadoraTest {
 			driver.findElement(By.id("ui-accordion-accordion-header-1")).click();
 			Duration duration = Duration.ofSeconds(10);
 			WebDriverWait wait = new WebDriverWait(driver, duration);
+
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("configuracionIntranetDSServicio")));
 			driver.findElement(By.id("configuracionIntranetDSServicio")).click();
+
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("codSilcon")));
 
+			driver.findElement(By.id("codSilcon")).clear();
 			driver.findElement(By.id("codSilcon")).sendKeys("IDUS7143");
+			
 			driver.findElement(By.id("configuracionIntranetSubmit")).click();
 			
+
 			// driver.findElement(By.id("codSilcon")).sendKeys(Keys.ENTER);
 	
 			try {
@@ -128,6 +133,7 @@ public class CalculadoraTest {
 			driver.findElement(By.id("configuracionIntranetDSServicio")).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("codSilcon")));
 
+			driver.findElement(By.id("codSilcon")).clear();
 			driver.findElement(By.id("codSilcon")).sendKeys("IDUS7143");
 			driver.findElement(By.id("configuracionIntranetSubmit")).click();
 			
