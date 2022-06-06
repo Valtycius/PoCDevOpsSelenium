@@ -97,6 +97,9 @@ public class CalculadoraTest {
 			}
 	
 			driver.findElement(By.id("INTRANETDS_SERVICIO")).sendKeys("XV23VC01");
+
+			driver.getPageSource();
+
 			driver.findElement(By.id("submitIntranetDSServicio")).click();
 			driver.findElement(By.id("sum1")).sendKeys("12");
 			driver.findElement(By.id("sum2")).click();
@@ -108,7 +111,7 @@ public class CalculadoraTest {
 			{
 				final String valorEsperado = "46";
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
-				Assert.assertEquals(value, valorEsperado, "El resultado no es correcto, se esperaba" + valorEsperado + " y se ha obtenido " + value);
+				Assert.assertEquals(value, valorEsperado, "El resultado no es correcto, se esperaba " + valorEsperado + " y se ha obtenido " + value);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -160,7 +163,7 @@ public class CalculadoraTest {
 			{
 				final String valorEsperado = "100";
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
-				Assert.assertEquals(value, valorEsperado, "El resultado no es correcto, se esperaba" + valorEsperado + " y se ha obtenido " + value);
+				Assert.assertEquals(value, valorEsperado, "El resultado no es correcto, se esperaba " + valorEsperado + " y se ha obtenido " + value);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
