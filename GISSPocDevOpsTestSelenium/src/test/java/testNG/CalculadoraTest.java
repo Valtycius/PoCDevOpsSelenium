@@ -73,13 +73,14 @@ public class CalculadoraTest {
 			driver.findElement(By.id("ui-accordion-accordion-header-1")).click();
 			Duration duration = Duration.ofSeconds(10);
 			WebDriverWait wait = new WebDriverWait(driver, duration);
-			wait.until(ExpectedConditions.elementToBeClickable(By.id("configuracionIntranetDSServicio")));
-			driver.findElement(By.id("configuracionIntranetDSServicio")).click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//form[@id='formIntranetDS']/p/input[2]")));
+			driver.findElement(By.xpath("//form[@id='formIntranetDS']/p/input[2]")).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("codSilcon")));
 
 			driver.findElement(By.id("codSilcon")).sendKeys("IDUS7143");
-			driver.findElement(By.id("configuracionIntranetSubmit")).click();
-			
+			driver.findElement(By.xpath("//input[@value='Guardar y cerrar']")).click();
+
+
 			// driver.findElement(By.id("codSilcon")).sendKeys(Keys.ENTER);
 	
 			try {
@@ -108,7 +109,7 @@ public class CalculadoraTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Error al generar el test " + e.getMessage());
-			Assert.assertTrue(false, "Test marcado como fail debido a una excepción durante la ejecución: " + e.toString());
+			Assert.assertTrue(false, "Test marcado como fail debido a una excepciï¿½n durante la ejecuciï¿½n: " + e.toString());
 			throw e;
 		}
 	}
@@ -124,12 +125,12 @@ public class CalculadoraTest {
 			driver.findElement(By.id("ui-accordion-accordion-header-1")).click();
 			Duration duration = Duration.ofSeconds(10);
 			WebDriverWait wait = new WebDriverWait(driver, duration);
-			wait.until(ExpectedConditions.elementToBeClickable(By.id("configuracionIntranetDSServicio")));
-			driver.findElement(By.id("configuracionIntranetDSServicio")).click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//form[@id='formIntranetDS']/p/input[2]")));
+			driver.findElement(By.xpath("//form[@id='formIntranetDS']/p/input[2]")).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("codSilcon")));
 
 			driver.findElement(By.id("codSilcon")).sendKeys("IDUS7143");
-			driver.findElement(By.id("configuracionIntranetSubmit")).click();
+			driver.findElement(By.xpath("//input[@value='Guardar y cerrar']")).click();
 			
 			// driver.findElement(By.id("codSilcon")).sendKeys(Keys.ENTER);
 	
@@ -159,7 +160,7 @@ public class CalculadoraTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Error al generar el test " + e.getMessage());
-			Assert.assertTrue(false, "Test marcado como fail debido a una excepción durante la ejecución: " + e.toString());
+			Assert.assertTrue(false, "Test marcado como fail debido a una excepciï¿½n durante la ejecuciï¿½n: " + e.toString());
 			throw e;
 		}
 	}
