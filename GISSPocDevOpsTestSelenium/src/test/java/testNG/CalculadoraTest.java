@@ -73,13 +73,14 @@ public class CalculadoraTest {
 			driver.findElement(By.id("ui-accordion-accordion-header-1")).click();
 			Duration duration = Duration.ofSeconds(10);
 			WebDriverWait wait = new WebDriverWait(driver, duration);
+
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//form[@id='formIntranetDS']/p/input[2]")));
 			driver.findElement(By.xpath("//form[@id='formIntranetDS']/p/input[2]")).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("codSilcon")));
 
+			driver.findElement(By.id("codSilcon")).clear();
 			driver.findElement(By.id("codSilcon")).sendKeys("IDUS7143");
 			driver.findElement(By.xpath("//input[@value='Guardar y cerrar']")).click();
-
 
 			// driver.findElement(By.id("codSilcon")).sendKeys(Keys.ENTER);
 	
@@ -93,6 +94,9 @@ public class CalculadoraTest {
 			}
 	
 			driver.findElement(By.id("INTRANETDS_SERVICIO")).sendKeys("XV23VC01");
+
+			driver.getPageSource();
+
 			driver.findElement(By.id("submitIntranetDSServicio")).click();
 			driver.findElement(By.id("sum1")).sendKeys("12");
 			driver.findElement(By.id("sum2")).click();
@@ -104,7 +108,7 @@ public class CalculadoraTest {
 			{
 				final String valorEsperado = "46";
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
-				Assert.assertEquals(value, valorEsperado, "El resultado no es correcto, se esperaba" + valorEsperado + " y se ha obtenido " + value);
+				Assert.assertEquals(value, valorEsperado, "El resultado no es correcto, se esperaba " + valorEsperado + " y se ha obtenido " + value);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -129,6 +133,7 @@ public class CalculadoraTest {
 			driver.findElement(By.xpath("//form[@id='formIntranetDS']/p/input[2]")).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("codSilcon")));
 
+			driver.findElement(By.id("codSilcon")).clear();
 			driver.findElement(By.id("codSilcon")).sendKeys("IDUS7143");
 			driver.findElement(By.xpath("//input[@value='Guardar y cerrar']")).click();
 			
@@ -155,7 +160,7 @@ public class CalculadoraTest {
 			{
 				final String valorEsperado = "100";
 				String value = driver.findElement(By.id("res1")).getAttribute("value");
-				Assert.assertEquals(value, valorEsperado, "El resultado no es correcto, se esperaba" + valorEsperado + " y se ha obtenido " + value);
+				Assert.assertEquals(value, valorEsperado, "El resultado no es correcto, se esperaba " + valorEsperado + " y se ha obtenido " + value);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
